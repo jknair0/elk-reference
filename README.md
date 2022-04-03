@@ -25,7 +25,7 @@ docker pull kibana:8.1.2
 
 Create kibana on same network as elastic search container
 ```shell
-docker run -d --name kibana --net elastic-search-network --env "ELASTICSEARCH_HOSTS=http://elasticsearch:9200" -p 5601:5601 kibana:8.1.2 
+docker run -d --name kibana --net elastic-search-network --env "ELASTICSEARCH_HOSTS=https://elasticsearch:9200" -p 5601:5601 kibana:8.1.2 
 ```
 
 ## Communication Setup
