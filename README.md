@@ -1,4 +1,4 @@
-# Setup
+# Naive Setup
 
 ## Elastic Search
 
@@ -85,7 +85,7 @@ Once you verity Kibana with token. You will be asked for verification code. You 
 docker exec kibana ./bin/kibana-verification-code
 ```
 
-**Docker commands**
+# Docker Compose Setup
 
 To execute the containers in the detach mode
 ```shell
