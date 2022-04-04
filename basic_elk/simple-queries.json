@@ -1,0 +1,38 @@
+GET news_index/_search
+{
+  "size": 1, 
+  "query": {
+    "match_all": {}
+  }
+}
+
+// search for the query string in fields "headline" and "short_description" in range of date and return only "headline" and "short_description"
+GET news_index/_search
+{
+  "from": 10,
+  "_source": [
+      "headline", 
+      "short_description"
+    ], 
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "range": {
+            "date": {
+              "gte": "2012-01-01",
+              "lte": "2015-01-01"
+            }
+          }
+        },{
+          "query_string": {
+            "fields": ["headline", "short_description"],
+            "query": "modi",
+            "fuzziness": 2
+          }
+        }
+      ]
+    }
+  }
+}
+
